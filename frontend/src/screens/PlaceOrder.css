@@ -1,0 +1,62 @@
+
+.placeorder button {
+  --primary-color: #000000;
+  --secondary-color: #fff;
+  --hover-color: #333333;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 10px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition:all 0.2s ;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  width: 100%;
+  justify-content: center;
+}
+
+.placeorder button .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeorder button .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.placeorder button .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.placeorder button:hover {
+  background-color: var(--hover-color);
+}
+
+.placeorder button:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.placeorder button:hover .arrow:before {
+  right: 0;
+}
