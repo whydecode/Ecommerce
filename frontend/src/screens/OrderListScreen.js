@@ -9,6 +9,7 @@ import { toast } from "react-hot-toast";
 const OrderListScreen = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const orderList = useSelector((state) => state.orderList);
   const { loading, error, orders } = orderList;
 
@@ -49,8 +50,8 @@ const OrderListScreen = () => {
               <tr key={order._id}>
                 <td>{order._id}</td>
                 <td>{order.user && order.user.name}</td>
-                <td>{order.createdAt}</td>
-                <td>{order.totalPrice}</td>
+                <td>{order.createdAt.substring(0, 10)}</td>
+                <td>${order.totalPrice}</td>
                 <td>
                   {order.isPaid ? (
                     order.paidAt.substring(0, 10)
@@ -65,10 +66,11 @@ const OrderListScreen = () => {
                     <i className="fas fa-times" style={{ color: "red" }}></i>
                   )}
                 </td>
-
-                <td style={{ textAlign: "center" }}>
+                <td>
                   <LinkContainer to={`/order/${order._id}`}>
-                    <Button>Details</Button>
+                    <Button variant="light" className="btn-sm">
+                      Details
+                    </Button>
                   </LinkContainer>
                 </td>
               </tr>

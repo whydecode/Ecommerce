@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SearchBox.css";
-import { useLocation } from "react-router-dom";
 const SearchBox = () => {
   
   const [keyboard, setKeyboard] = useState("");

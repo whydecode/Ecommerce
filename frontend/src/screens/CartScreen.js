@@ -13,6 +13,8 @@ import {
   Card,
 } from "react-bootstrap";
 import { addToCart, removeFromCart } from "../actions/cartActions";
+import { toast } from "react-hot-toast";
+import Loader from "../components/Loader";
 const CartScreen = () => {
   const { id } = useParams();
   const location = useLocation();
@@ -24,11 +26,14 @@ const CartScreen = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { loading, error, userInfo } = userLogin;
   useEffect(() => {
+    if (error) {
+      toast.error(error);
+    }
     if (id) {
       dispatch(addToCart(id, qty));
     }
     navigate("/cart");
-  }, [dispatch, id, qty, navigate]);
+  }, [dispatch, id, qty, navigate, error]);
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
@@ -44,8 +49,8 @@ const CartScreen = () => {
 
   return (
     <Row>
-
       <Col md={9}>
+        {loading && <Loader />}
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <Message>

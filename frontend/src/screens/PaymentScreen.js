@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,7 +9,7 @@ import { Col, Form } from "react-bootstrap";
 const PaymentScreen = () => {
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
-
+  const navigate = useNavigate();
   if (!shippingAddress) {
     navigate("/shipping");
   }
@@ -17,7 +17,7 @@ const PaymentScreen = () => {
   const [paymentMethod, setPaymentMethod] = useState("PayPal");
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(savePaymentMethod(paymentMethod));

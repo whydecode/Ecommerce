@@ -38,6 +38,9 @@ const ProductListScreen = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
   useEffect(() => {
+    if (errorCreate) {
+      console.log(errorCreate);
+    }
     dispatch({ type: PRODUCT_CREATE_RESET });
     if (errorDelete) {
       toast.error(errorDelete);
@@ -52,6 +55,7 @@ const ProductListScreen = () => {
       dispatch(listProducts("", pageNumber));
     }
   }, [
+    errorCreate,
     dispatch,
     userInfo,
     navigate,
