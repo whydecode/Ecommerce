@@ -11,7 +11,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
-    "build": "cd backend && npm install && cd ../frontend && npm install && npm run build"
+    "build": "npm install && cd backend && npm install && cd ../frontend && npm install && npm run build"
     
   },
   "author": "Rahul",
