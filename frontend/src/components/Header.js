@@ -21,10 +21,10 @@ const Header = () => {
           <LinkContainer to="/">
             <Navbar.Brand>My-Store</Navbar.Brand>
           </LinkContainer>
+          <SearchBox />
           <Toaster />
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <SearchBox />
             <Nav className="ml-auto">
               <LinkContainer to="/cart">
                 <Nav.Link>
