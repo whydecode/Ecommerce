@@ -6,6 +6,7 @@ import { Col, Row, ListGroup, Image, Card } from "react-bootstrap";
 import { createOrder } from "../actions/orderActions";
 import { useEffect } from "react";
 import Message from "../components/Message";
+import { resetCartItems } from "../actions/cartActions";
 
 const PlaceOrderScreen = () => {
   const dispatch = useDispatch();
@@ -46,6 +47,7 @@ const PlaceOrderScreen = () => {
         totalPrice: cart.totalPrice,
       })
     );
+    resetCartItems();
   };
   return (
     <>

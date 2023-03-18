@@ -20,6 +20,7 @@ const Header = () => {
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>My-Store</Navbar.Brand>
+            
           </LinkContainer>
           <SearchBox />
           <Toaster />

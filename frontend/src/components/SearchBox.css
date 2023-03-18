@@ -7,8 +7,10 @@
     height: 40px;
     border-radius: 40px;
     width: 200px;
+    max-width: 40vw;
     outline: 1px solid black;
     overflow: hidden;
+    margin-left: 10px;
 }
 
 .search:hover > .search-btn{
@@ -36,7 +38,8 @@
     font-size: 16px;
     transition: ease-in 0.4s;
     line-height: 40px;
-    width: 110px;
+    width: 50%;
+    max-width: 80%;
     font-family: 'Pangolin', cursive;
     margin-left: 10px;
 }
