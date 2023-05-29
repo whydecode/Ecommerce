@@ -20,9 +20,8 @@ const Header = () => {
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>My-Store</Navbar.Brand>
-            
           </LinkContainer>
-          <SearchBox />
+
           <Toaster />
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -64,6 +63,7 @@ const Header = () => {
                 </NavDropdown>
               )}
             </Nav>
+            <SearchBox />
           </Navbar.Collapse>
         </Container>
       </Navbar>

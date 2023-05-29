@@ -1,0 +1,102 @@
+@media (max-width: 600px){
+    .book-card{
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        margin: 5px 15px !important;
+        justify-content: space-between;
+        border-radius: 0 !important;
+        outline: none !important;
+        padding: 5px 0;
+        border-bottom: 1px solid rgb(166, 166, 166) !important;
+        border-top: 1px solid rgb(166, 166, 166) !important;
+    }
+    .productImage{
+        width: 20vw !important;
+        height: 35vw !important;
+        /* aspect-ratio: 8/6 !important; */
+        min-width: 120px !important;
+    }
+    .bookInfoDiv{
+        justify-self: end;
+        width: 60%;
+        height: 30vw !important;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+    .bookInfo{
+        width: 100% !important;
+        padding: 5px 10px !important;
+    }
+    .author{
+        width: 100% !important;
+        padding: 0px 5px;
+    }
+    .addButton{
+        width: 80% !important;
+        align-items: end;
+        margin: 0 10%;
+    }
+}
+
+.book-card{
+    max-width: 235px;
+    outline: 1px solid rgb(195, 195, 195);
+    outline-offset: 15px;
+    border-radius: 0.1px;
+    display: grid;
+    margin: 25px 5px;
+    font-size: 20px;
+}
+.productImage{
+    width: 235px;
+    height: 225px;
+}
+.bookInfo{
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+}
+.bookInfo > a{
+    height: 20px;
+}
+.productPrice{
+    color: black;
+    font-size: calc(13px + 0.1vw);
+    font-weight: 700;
+}
+.productName{
+    font-size: calc(13px + 0.1vw);
+    max-width: 235px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.addButton{
+    width: 100%;
+    font-size: 15px;
+    padding: 5px 0;
+    max-height: 50px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.addButton:disabled{
+    background-color: gray;
+}
+
+.author{
+    width: 100%;
+    justify-self: center;
+    margin: 5px 5px 10px 0px;
+    text-align: left;
+    font-size: 15px;
+}
+.rating > span{
+    font-size: calc(13px + 0.1vw);
+}

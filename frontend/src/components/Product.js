@@ -1,32 +1,41 @@
 import React from "react";
-import {Link} from "react-router-dom"
-import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "./Book.css";
+import { addToCart } from "../actions/cartActions";
 import Rating from "./Rating";
-import "./Product.css";
-
+import { useDispatch } from "react-redux";
+import { toast } from "react-hot-toast";
 const Product = ({ product }) => {
+  const dispatch = useDispatch();
+  const cartButton = () => {
+    dispatch(addToCart(product._id, 1));
+    toast.success(`${product.name} has been added to cart`);
+  };
   return (
-    <Card className="my-3 p-3 rounded">
+    <div className="book-card">
       <Link to={`/product/${product._id}`}>
-        <Card.Img src={product.image} varient="top" />
+        <img src={product.image} alt={product.name} className="productImage" />
       </Link>
-      <Card.Body>
-        <Link to={`/product/${product._id}`}>
-          <Card.Title>
-            <strong>{product.name}</strong>
-          </Card.Title>
-        </Link>
-        <Card.Text as="div">
-        </Card.Text>
-        <Card.Text as="div">
-          <Rating
-            value={product.rating}
-            text={`${product.numReviews} reviews`}
-          />
-        </Card.Text>
-        <Card.Text as="h3">&#x20b9;{product.price}</Card.Text>
-      </Card.Body>
-    </Card>
+
+      <div className="bookInfoDiv">
+        <div className="bookInfo">
+          <Link to={`/product/${product._id}`}>
+            <p className="productName">{product.name}</p>
+          </Link>
+        </div>
+        <Rating value={product.rating} text={`${product.numReviews} reviews`} />
+        <span className="productPrice">&#x20b9;{product.price}</span>
+
+        <p className="author">{product.brand}</p>
+        <button
+          className="addButton"
+          onClick={cartButton}
+          disabled={product.countInStock == 0}
+        >
+          {product.countInStock == 0 ? "Out of Stock" : "Add to Cart"}
+        </button>
+      </div>
+    </div>
   );
 };
 
