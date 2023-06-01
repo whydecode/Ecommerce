@@ -2,12 +2,13 @@ import thunk from "redux-thunk";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import {
   productListReducer,
+  productListCategoryReducer,
   productDetailsReducer,
   productDeleteReducer,
   productCreateReducer,
   productUpdateReducer,
   productCreateReviewReducer,
-  productTopRatedReducer
+  productTopRatedReducer,
 } from "./reducers/productReducers";
 
 import { cartReducer } from "./reducers/cartReducer";
@@ -45,6 +46,7 @@ const paymentMethodStorage = localStorage.getItem("paymentMethod")
 
 const reducer = combineReducers({
   productList: productListReducer,
+  productListCategory: productListCategoryReducer,
   productDetails: productDetailsReducer,
   productDelete: productDeleteReducer,
   productCreate: productCreateReducer,

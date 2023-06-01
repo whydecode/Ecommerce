@@ -4,37 +4,27 @@ import { Col, Row } from "react-bootstrap";
 import Product from "../components/Product";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import { listProducts } from "../actions/productActions";
+import { listProductsCategory } from "../actions/productActions";
 import { useParams } from "react-router-dom";
 import Paginate from "../components/Paginate";
-import ProductCarousel from "../components/ProductCarousel";
-import { Link } from "react-router-dom";
 import Meta from "../components/Meta";
 import CategoryList from "../components/CategoryList";
-const HomeScreen = () => {
-  const { keyword, pageNumber } = useParams();
+const CategoryScreen = () => {
+  const { keyword, pageNumber, category } = useParams();
 
   const dispatch = useDispatch();
-  const productList = useSelector((state) => state.productList);
-  const { loading, error, products, page, pages } = productList;
+  const productListCategory = useSelector((state) => state.productListCategory);
+  const { loading, error, products, page, pages } = productListCategory;
 
   useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber));
-  }, [dispatch, keyword, pageNumber]);
+    dispatch(listProductsCategory(keyword, pageNumber, category));
+  }, [dispatch, keyword, pageNumber, category]);
 
   return (
     <>
       <Meta />
-
-      {!keyword ? (
-        <ProductCarousel />
-      ) : (
-        <Link className="btn btn-dark my-3" to="/">
-          Take me back Home
-        </Link>
-      )}
       <CategoryList />
-      <h1>Latest Products</h1>
+      <h1>{category}</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -43,7 +33,7 @@ const HomeScreen = () => {
         <>
           <Row>
             {products.map((product) => (
-              <Col key={product._id} >
+              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                 <Product product={product} />
               </Col>
             ))}
@@ -59,4 +49,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default CategoryScreen;

@@ -1,102 +1,129 @@
-@media (max-width: 600px){
-    .book-card{
-        width: 100% !important;
-        max-width: 100% !important;
-        display: flex !important;
-        margin: 5px 15px !important;
-        justify-content: space-between;
-        border-radius: 0 !important;
-        outline: none !important;
-        padding: 5px 0;
-        border-bottom: 1px solid rgb(166, 166, 166) !important;
-        border-top: 1px solid rgb(166, 166, 166) !important;
-    }
-    .productImage{
-        width: 20vw !important;
-        height: 35vw !important;
-        /* aspect-ratio: 8/6 !important; */
-        min-width: 120px !important;
-    }
-    .bookInfoDiv{
-        justify-self: end;
-        width: 60%;
-        height: 30vw !important;
-        display: flex;
-        flex-wrap: wrap;
-        align-content: space-between;
-    }
-    .bookInfo{
-        width: 100% !important;
-        padding: 5px 10px !important;
-    }
-    .author{
-        width: 100% !important;
-        padding: 0px 5px;
-    }
-    .addButton{
-        width: 80% !important;
-        align-items: end;
-        margin: 0 10%;
-    }
+.book-card {
+  max-width: 245px;
+  border-radius: 0.1px;
+  display: grid;
+  margin: 25px 5px;
+  font-size: 20px;
+  padding: 5px;
 }
 
-.book-card{
-    max-width: 235px;
-    outline: 1px solid rgb(195, 195, 195);
-    outline-offset: 15px;
-    border-radius: 0.1px;
-    display: grid;
-    margin: 25px 5px;
-    font-size: 20px;
+.book-card:hover {
+  box-shadow: 0 0 10px 1px #c2c2c2;
 }
-.productImage{
-    width: 235px;
-    height: 225px;
+
+.productImage {
+  width: 235px;
+  height: 225px;
 }
-.bookInfo{
-    width: 100%;
-    justify-self: center;
-    align-self: center;
-    display: flex;
+.bookInfo {
+  width: 100%;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+}
+.bookInfo > a {
+  height: 20px;
+}
+.productPrice {
+  color: black;
+  font-size: calc(13px + 0.1vw);
+  font-weight: 700;
+}
+.productName {
+  font-size: calc(13px + 0.1vw);
+  max-width: 235px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.addButton {
+  width: 35px;
+  height: 35px;
+  font-size: 15px;
+  padding: 5px 0;
+  max-height: 50px;
+  color: black;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.addButton:hover {
+  background-color: black;
+  color: white;
+}
+.addButton:disabled {
+  background-color: gray;
+}
+.addButton:disabled:hover {
+  color: black;
+}
+.author {
+  width: 100%;
+  justify-self: center;
+  margin: 5px 5px 10px 0px;
+  text-align: left;
+  font-size: 15px;
+}
+.rating > span {
+  font-size: calc(13px + 0.1vw);
+}
+
+.book-card:hover .bookInfoDiv .bookInfo .productName {
+  color: rgb(0, 98, 255);
+}
+.priceDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+@media (max-width: 600px) {
+  .book-card {
+    width: 100% !important;
+    height: fit-content !important;
+    margin: 5px 0 !important;
+    max-width: 100% !important;
+    display: flex !important;
     justify-content: space-between;
-}
-.bookInfo > a{
-    height: 20px;
-}
-.productPrice{
-    color: black;
-    font-size: calc(13px + 0.1vw);
-    font-weight: 700;
-}
-.productName{
-    font-size: calc(13px + 0.1vw);
-    max-width: 235px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
+    border-radius: 0 !important;
+    outline: none !important;
+    border-bottom: 1px solid rgb(166, 166, 166) !important;
+    border-top: 1px solid rgb(166, 166, 166) !important;
+  }
+  .productImage {
+    width: 50px !important;
+    height: 35vw !important;
+    /* aspect-ratio: 8/6 !important; */
+    min-width: 100px !important;
+  }
+  .bookInfoDiv {
+    justify-self: end;
+    /* width: 60%; */
+    height: 30vw !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 0 0 0 10px;
+  }
+  .bookInfo {
+    width: 100% !important;
 
-.addButton{
-    width: 100%;
-    font-size: 15px;
-    padding: 5px 0;
-    max-height: 50px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
-.addButton:disabled{
-    background-color: gray;
-}
-
-.author{
-    width: 100%;
-    justify-self: center;
-    margin: 5px 5px 10px 0px;
-    text-align: left;
-    font-size: 15px;
-}
-.rating > span{
-    font-size: calc(13px + 0.1vw);
+  }
+  .author {
+    width: 100% !important;
+    padding: 0px 5px;
+  }
+  .productName {
+    width: 90%;
+    min-width: 200px !important;
+  }
+  .priceDiv {
+    min-width: 200px !important;
+    width: 80% !important;
+  }
 }

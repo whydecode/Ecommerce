@@ -5,6 +5,8 @@ import { addToCart } from "../actions/cartActions";
 import Rating from "./Rating";
 import { useDispatch } from "react-redux";
 import { toast } from "react-hot-toast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 const Product = ({ product }) => {
   const dispatch = useDispatch();
   const cartButton = () => {
@@ -24,16 +26,23 @@ const Product = ({ product }) => {
           </Link>
         </div>
         <Rating value={product.rating} text={`${product.numReviews} reviews`} />
-        <span className="productPrice">&#x20b9;{product.price}</span>
-
-        <p className="author">{product.brand}</p>
-        <button
-          className="addButton"
-          onClick={cartButton}
-          disabled={product.countInStock == 0}
-        >
-          {product.countInStock == 0 ? "Out of Stock" : "Add to Cart"}
-        </button>
+        <hr></hr>
+        <div className="priceDiv">
+          <div>
+            <span className="productPrice">&#x20b9;{product.price}</span>
+            <p className="author">{product.brand} </p>
+          </div>
+          <div>
+            {" "}
+            <button
+              className="addButton"
+              onClick={cartButton}
+              disabled={product.countInStock === 0}
+            >
+              <FontAwesomeIcon icon={faCartShopping} />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

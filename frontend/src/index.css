@@ -1,6 +1,13 @@
 main {
   min-height: 80vh;
 }
+#root {
+  background-color: rgb(244, 244, 234);
+  overflow: hidden;
+}
+.container {
+  min-width: 85%;
+}
 
 h3 {
   padding: 1rem 0;
@@ -35,7 +42,7 @@ h2 {
   font-size: calc(12px + 0.5vw);
   color: #fff;
 }
-.carousel{
+.carousel {
   display: flex;
   justify-content: center;
   text-align: center;

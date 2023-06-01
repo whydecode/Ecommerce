@@ -1,0 +1,14 @@
+.category {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.categoryItem {
+  font-size: calc(18px + 0.1vw);
+  text-align: center;
+}
+
+.categoryImage {
+  width: 60px;
+}

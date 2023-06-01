@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
+import CategoryScreen from "./screens/CategoryScreen";
 import CartScreen from "./screens/CartScreen";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
@@ -17,7 +18,6 @@ import UserListScreen from "./screens/UserListScreen";
 import UserEditScreen from "./screens/UserEditScreen";
 import ProductListScreen from "./screens/ProductListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
-
 import React from "react";
 import OrderListScreen from "./screens/OrderListScreen";
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <Header />
-        <main className="py-3">
+        <main>
           <Container>
             <Routes>
               <Route exact path="/" element={<HomeScreen />} />
@@ -36,6 +36,8 @@ const App = () => {
                 element={<HomeScreen />}
               />
               <Route path="/product/:id" element={<ProductScreen />} />
+              <Route path="/Category/:category" element={<CategoryScreen />} />
+
               <Route path="/cart/:id?" element={<CartScreen />} />
               <Route path="/login" element={<LoginScreen />} />
               <Route path="/shipping" element={<ShippingScreen />} />

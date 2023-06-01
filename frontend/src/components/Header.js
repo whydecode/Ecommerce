@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="" expand="lg">
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>My-Store</Navbar.Brand>
@@ -24,6 +24,7 @@ const Header = () => {
 
           <Toaster />
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <SearchBox />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
               <LinkContainer to="/cart">
@@ -63,7 +64,6 @@ const Header = () => {
                 </NavDropdown>
               )}
             </Nav>
-            <SearchBox />
           </Navbar.Collapse>
         </Container>
       </Navbar>
