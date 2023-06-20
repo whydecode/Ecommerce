@@ -20,6 +20,8 @@ import ProductListScreen from "./screens/ProductListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
 import React from "react";
 import OrderListScreen from "./screens/OrderListScreen";
+import AboutScreen from "./screens/AboutScreen";
+import ContactScreen from "./screens/ContactScreen";
 const App = () => {
   return (
     <>
@@ -64,6 +66,8 @@ const App = () => {
                 path="/admin/product/:id/edit"
                 element={<ProductEditScreen />}
               />
+              <Route path="/about" element={<AboutScreen />} />
+              <Route path="/contact" element={<ContactScreen />} />
             </Routes>
           </Container>
         </main>

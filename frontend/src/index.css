@@ -1,5 +1,5 @@
 main {
-  min-height: 80vh;
+  min-height: 45vh;
 }
 #root {
   background-color: rgb(244, 244, 234);
@@ -39,18 +39,18 @@ h2 {
 }
 
 .carousel-caption h3 {
-  font-size: calc(12px + 0.5vw);
+  font-size: calc(12px + 0.4vw);
   color: #fff;
 }
 .carousel {
   display: flex;
   justify-content: center;
   text-align: center;
-  height: 400px;
-  max-height: 35vh;
+  height: 430px;
+  max-height: 40vh;
 }
 .carousel img {
-  height: 250px;
+  height: 200px;
   max-height: 50vw;
   max-width: 80%;
   margin: 70px 0;
